@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>Kit ADA Plus Kids – ADA MarketPlace</title>
+    <style>
+        .form-control::placeholder { color: #868686; }
+        .form-control:hover::placeholder { color: #c084fc; }
+        .form-control:focus::placeholder { color: #a855f7; }
+
+        .btn-purple { color: #8854b6; border: 1px solid #8854b6; }
+        .btn-purple:hover { background-color: #d8b4f8; color: white; }
+
+        .btn-primary { background-color: #a855f7; color: white; border: none; }
+        .btn-primary:hover { background-color: #9534f0; color: white; border: none; }
+        .btn-primary:active,
+        .btn-primary:focus,
+        .btn-primary:focus-visible { background-color: #a855f7 !important; color: white; border: none; box-shadow: none !important; }
+
+        .card-img-top { width: 100%; height: 350px; object-fit: fill; }
+        label { font-size: 14px; }
+        .card-body .btn { display: block; margin-left: auto; margin-top: auto; }
+        .card-body { display: flex; flex-direction: column; }
+
+        /* ===== Página de Produto ===== */
+        .product-img-main {
+            width: 100%; max-height: 480px; object-fit: contain;
+            border-radius: 8px; background-color: #f8f4ff; padding: 16px;
+        }
+        .product-thumb {
+            width: 80px; height: 80px; object-fit: cover; border-radius: 6px;
+            cursor: pointer; border: 2px solid transparent; transition: border-color .2s;
+        }
+        .product-thumb:hover, .product-thumb.active { border-color: #a855f7; }
+        .badge-purple { background-color: #a855f7; }
+        .price-tag { font-size: 2rem; font-weight: 700; color: #7c3aed; }
+        .price-original { font-size: 1rem; text-decoration: line-through; color: #9ca3af; }
+        .feature-icon { color: #a855f7; }
+        .section-divider { border-top: 2px solid #f3e8ff; margin: 2rem 0; }
+        .review-stars { color: #f59e0b; }
+        .btn-buy {
+            background-color: #a855f7; color: white; border: none;
+            font-size: 1.1rem; padding: 0.75rem 2rem; border-radius: 8px; transition: background-color .2s;
+        }
+        .btn-buy:hover { background-color: #9534f0; color: white; }
+        .btn-wishlist {
+            border: 2px solid #a855f7; color: #a855f7; background-color: transparent;
+            font-size: 1.1rem; padding: 0.75rem 1.5rem; border-radius: 8px; transition: all .2s;
+        }
+        .btn-wishlist:hover { background-color: #f3e8ff; }
+        .breadcrumb-item a { color: #a855f7; text-decoration: none; }
+        .breadcrumb-item a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+    <!-- ===== NAVBAR ===== -->
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="./index.html">
+                    <img src="./images/icone-de-panier-violet.png" alt="ADA MarketPlace logo" width="30" height="24">
+                </a>
+                <a class="navbar-brand" href="./index.html">ADA MarketPlace</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Abrir menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Produtos
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="./index.html#cursos-online">Cursos Online</a></li>
+                                 <li><a class="dropdown-item" href="./Produto2.html">Ada Produtos kids</a></li>
+                                <li><a class="dropdown-item" href="./Produto1.html">Produtos Personalizados</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Suporte</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2 purple" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+                        <button class="btn btn-purple" type="submit">Pesquisar</button>
+                    </form>
+                    <button type="button" class="btn btn-primary ms-2" data-bs-toggle="modal" data-bs-target="#modalCadastro">
+                        Cadastre-se
+                    </button>
+
+                    <!-- Modal Cadastro -->
+                    <div class="modal fade" id="modalCadastro" tabindex="-1" aria-labelledby="modalCadastroLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="modalCadastroLabel">Cadastro</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <div class="form-group mb-2">
+                                            <label for="cadastroNome">Nome</label>
+                                            <input type="text" class="form-control" id="cadastroNome" placeholder="Digite seu Nome" required>
+                                        </div>
+                                        <div class="form-group mb-2">
+                                            <label for="cadastroSobrenome">Sobrenome</label>
+                                            <input type="text" class="form-control" id="cadastroSobrenome" placeholder="Digite seu sobrenome" required>
+                                        </div>
+                                        <div class="form-group mb-2">
+                                            <label for="cadastroCPF">CPF</label>
+                                            <input type="text" class="form-control" id="cadastroCPF" placeholder="000.000.000-00" required>
+                                        </div>
+                                        <div class="form-group mb-2">
+                                            <label for="cadastroEmail">Email</label>
+                                            <input type="email" class="form-control" id="cadastroEmail" placeholder="Digite seu email" required>
+                                        </div>
+                                        <div class="form-group mb-2">
+                                            <label for="cadastroSenha">Senha</label>
+                                            <input type="password" class="form-control" id="cadastroSenha" placeholder="Digite sua senha">
+                                        </div>
+                                        <div class="form-group mb-3">
+                                            <label for="cadastroConfirmSenha">Confirmar Senha</label>
+                                            <input type="password" class="form-control" id="cadastroConfirmSenha" placeholder="Confirme sua senha">
+                                        </div>
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" id="receberPromocoes">
+                                            <label class="form-check-label" for="receberPromocoes">Desejo receber promoções via e-mail</label>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                                    <button type="button" class="btn btn-primary">Salvar cadastro</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="container my-4">
+
+        <!-- Breadcrumb -->
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="./index.html">Início</a></li>
+                <li class="breadcrumb-item"><a href="./index.html#personalizados">Produtos Personalizados</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Kit ADA Plus Kids</li>
+            </ol>
+        </nav>
+
+        <!-- Product Section -->
+        <article class="row g-5 align-items-start">
+
+            <!-- Imagens -->
+            <div class="col-12 col-md-6">
+                <img id="mainProductImg" src="./images/kit2infatil.png" alt="Kit ADA Plus Kids" class="product-img-main mb-3 shadow-sm">
+            </div>
+
+            <!-- Informações -->
+            <div class="col-12 col-md-6">
+                <span class="badge badge-purple text-white mb-2">Ideal para Crianças</span>
+                <h1 class="h2 fw-bold">Kit ADA Plus Kids</h1>
+                <p class="text-muted mb-1">SKU: ADA-KIT-002 &nbsp;|&nbsp; Estoque: <span class="text-success fw-semibold">Disponível</span></p>
+
+                <!-- Avaliação -->
+                <div class="d-flex align-items-center gap-2 mb-3">
+                    <span class="review-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </span>
+                    <small class="text-muted">(5.0) · 84 avaliações</small>
+                </div>
+
+                <!-- Preço -->
+                <div class="mb-3">
+                    <span class="price-original me-2">R$ 179,90</span>
+                    <span class="price-tag">R$ 139,90</span>
+                    <div><small class="text-success fw-semibold">Você economiza R$ 40,00 🎉</small></div>
+                    <small class="text-muted">Em até 4x de R$ 34,98 sem juros</small>
+                </div>
+
+                <!-- Itens do kit -->
+                <ul class="list-unstyled mb-4">
+                    <li class="mb-1"><i class="fas fa-check-circle feature-icon me-2"></i>Fone de ouvido infantil</li>
+                    <li class="mb-1"><i class="fas fa-check-circle feature-icon me-2"></i>Garrafinha térmica</li>
+                    <li class="mb-1"><i class="fas fa-check-circle feature-icon me-2"></i>Mochila sacola ADA Tech</li>
+                    <li class="mb-1"><i class="fas fa-check-circle feature-icon me-2"></i>Camiseta infantil com logo ADA</li>
+                    <li class="mb-1"><i class="fas fa-check-circle feature-icon me-2"></i>Livro infantil sobre tecnologia</li>
+                    <li class="mb-1"><i class="fas fa-check-circle feature-icon me-2"></i>Pack de adesivos exclusivos</li>
+                </ul>
+
+                <!-- Botões -->
+                <div class="d-flex gap-3 flex-wrap mb-4">
+                    <button class="btn-buy" data-bs-toggle="modal" data-bs-target="#modalCompra">
+                        <i class="fas fa-shopping-cart me-2"></i>Comprar agora
+                    </button>
+                    <button class="btn-wishlist">
+                        <i class="fas fa-heart me-2"></i>Favoritar
+                    </button>
+                </div>
+
+                <!-- Frete -->
+                <div class="d-flex align-items-center gap-2 text-muted small">
+                    <i class="fas fa-truck feature-icon"></i>
+                    <span>Frete grátis para todo o Brasil em compras acima de R$ 150,00</span>
+                </div>
+            </div>
+        </article>
+
+        <div class="section-divider"></div>
+
+        <!-- Descrição -->
+        <section aria-labelledby="descricaoTitulo">
+            <h2 id="descricaoTitulo" class="h4 fw-bold mb-3">Descrição do Produto</h2>
+            <div class="row">
+                <div class="col-12 col-lg-8">
+                    <p>O <strong>Kit ADA Plus Kids</strong> foi pensado para despertar o amor pela tecnologia desde cedo! Um kit completo e divertido para as crianças que já estão começando sua jornada no mundo da programação.</p>
+                    <p>Cada item foi selecionado para tornar o aprendizado mais leve e divertido:</p>
+                    <ul>
+                        <li><strong>Fone de Ouvido Infantil</strong> – com limitador de volume para proteger a audição, almofadas macias e design colorido.</li>
+                        <li><strong>Garrafinha Térmica</strong> – 600ml, aço inoxidável, mantém a temperatura por até 8h, com estampa exclusiva ADA.</li>
+                        <li><strong>Mochila Sacola ADA Tech</strong> – lona resistente com alças reforçadas e bolso frontal, perfeita para a escola.</li>
+                        <li><strong>Camiseta Infantil</strong> – malha 100% algodão penteado macio, disponível nos tamanhos 2 ao 12 anos.</li>
+                        <li><strong>Livro Infantil sobre Tecnologia</strong> – história ilustrada que apresenta o mundo da programação de forma lúdica para crianças.</li>
+                        <li><strong>Pack de Adesivos (12 unidades)</strong> – vinil impermeável, para personalizar cadernos e material escolar.</li>
+                    </ul>
+                    <p class="text-muted small">* A cor da garrafinha e da camiseta podem variar conforme o estoque. Tamanhos sujeitos à disponibilidade.</p>
+                </div>
+                <div class="col-12 col-lg-4">
+                    <div class="card border-0 bg-light p-3">
+                        <h3 class="h6 fw-bold mb-3">Informações de Entrega</h3>
+                        <ul class="list-unstyled small mb-0">
+                            <li class="mb-2"><i class="fas fa-box-open feature-icon me-2"></i>Prazo: 5 a 10 dias úteis</li>
+                            <li class="mb-2"><i class="fas fa-shield-alt feature-icon me-2"></i>Garantia de 30 dias</li>
+                            <li class="mb-2"><i class="fas fa-undo feature-icon me-2"></i>Troca facilitada</li>
+                            <li><i class="fas fa-lock feature-icon me-2"></i>Pagamento 100% seguro</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Formulário de Compra -->
+        <section aria-labelledby="formTitulo">
+            <h2 id="formTitulo" class="h4 fw-bold mb-3">Finalizar Compra</h2>
+            <div class="row">
+                <div class="col-12 col-lg-7">
+                    <form id="formCompra" novalidate>
+                        <div class="row g-3">
+                            <div class="col-12 col-sm-6">
+                                <label for="compraNome" class="form-label fw-semibold">Nome completo</label>
+                                <input type="text" class="form-control" id="compraNome" placeholder="Seu nome" required>
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <label for="compraEmail" class="form-label fw-semibold">E-mail</label>
+                                <input type="email" class="form-control" id="compraEmail" placeholder="seu@email.com" required>
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <label for="compraTelefone" class="form-label fw-semibold">Telefone / WhatsApp</label>
+                                <input type="tel" class="form-control" id="compraTelefone" placeholder="(11) 99999-9999">
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <label for="compraCEP" class="form-label fw-semibold">CEP</label>
+                                <input type="text" class="form-control" id="compraCEP" placeholder="00000-000" required>
+                            </div>
+                            <div class="col-12 col-sm-4">
+                                <label for="compraTamanho" class="form-label fw-semibold">Tamanho da Camiseta (idade)</label>
+                                <select class="form-select" id="compraTamanho" required>
+                                    <option value="" disabled selected>Selecionar</option>
+                                    <option value="2">2 anos</option>
+                                    <option value="4">4 anos</option>
+                                    <option value="6">6 anos</option>
+                                    <option value="8">8 anos</option>
+                                    <option value="10">10 anos</option>
+                                    <option value="12">12 anos</option>
+                                </select>
+                            </div>
+                            <div class="col-12 col-sm-4">
+                                <label for="compraQtd" class="form-label fw-semibold">Quantidade</label>
+                                <input type="number" class="form-control" id="compraQtd" min="1" max="10" value="1" required>
+                            </div>
+                            <div class="col-12 col-sm-4">
+                                <label for="compraPagamento" class="form-label fw-semibold">Pagamento</label>
+                                <select class="form-select" id="compraPagamento" required>
+                                    <option value="" disabled selected>Selecionar</option>
+                                    <option value="cartao">Cartão de crédito</option>
+                                    <option value="pix">Pix</option>
+                                    <option value="boleto">Boleto</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <label for="compraObservacoes" class="form-label fw-semibold">Observações (opcional)</label>
+                                <textarea class="form-control" id="compraObservacoes" rows="3" placeholder="Ex: presente, embalagem especial…"></textarea>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="compraTermos" required>
+                                    <label class="form-check-label" for="compraTermos">
+                                        Li e aceito os <a href="#" style="color:#a855f7">Termos de Uso</a> e a <a href="#" style="color:#a855f7">Política de Privacidade</a>.
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn-buy">
+                                    <i class="fas fa-lock me-2"></i>Confirmar Pedido – R$ 139,90
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Resumo do Pedido -->
+                <div class="col-12 col-lg-5 mt-4 mt-lg-0">
+                    <div class="card border-0 shadow-sm p-4">
+                        <h3 class="h6 fw-bold mb-3">Resumo do Pedido</h3>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Kit ADA Plus Kids × 1</span>
+                            <span>R$ 139,90</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2 text-success">
+                            <span>Frete</span>
+                            <span>Grátis</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2 text-success small">
+                            <span>Desconto aplicado</span>
+                            <span>– R$ 40,00</span>
+                        </div>
+                        <hr>
+                        <div class="d-flex justify-content-between fw-bold fs-5">
+                            <span>Total</span>
+                            <span style="color:#7c3aed">R$ 139,90</span>
+                        </div>
+                        <small class="text-muted mt-2 d-block">Em até 4x de R$ 34,98 sem juros</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Avaliações -->
+        <section aria-labelledby="avaliacoesTitulo">
+            <h2 id="avaliacoesTitulo" class="h4 fw-bold mb-3">Avaliações de Clientes</h2>
+            <div class="row g-4">
+                <div class="col-12 col-md-4">
+                    <div class="card border-0 bg-light p-3 h-100">
+                        <div class="review-stars mb-1">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="mb-1">"Meu filho de 6 anos amou o fone! A garrafinha é ótima para levar para a escola. Os adesivos foram um sucesso!"</p>
+                        <small class="text-muted">— Juliana T., Curitiba</small>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="card border-0 bg-light p-3 h-100">
+                        <div class="review-stars mb-1">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="mb-1">"Presente perfeito para minha sobrinha! A mochila sacola é linda e resistente, ela usa todo dia na escola."</p>
+                        <small class="text-muted">— Rafael O., Recife</small>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="card border-0 bg-light p-3 h-100">
+                        <div class="review-stars mb-1">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="mb-1">"Chegou super bem embalado. Minha filha de 8 anos ficou encantada com o fone e já encheu a mochila de adesivos!"</p>
+                        <small class="text-muted">— Mariana C., Brasília</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Produtos Relacionados -->
+        <section aria-labelledby="relacionadosTitulo">
+            <h2 id="relacionadosTitulo" class="h4 fw-bold mb-3">Você também pode gostar</h2>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <div class="card shadow h-100">
+                        <img src="./images/kit1.png" class="card-img-top" alt="Kit Ada Premium">
+                        <div class="card-body">
+                            <h5 class="card-title">Kit Ada Premium</h5>
+                            <h6 class="card-subtitle mb-2 text-body-secondary">R$ 199,90</h6>
+                            <p class="card-text">O kit completo com copo térmico, livro sobre dados, camiseta, caderno, ecobag e adesivos.</p>
+                            <a href="./Produto1.html" class="btn btn-primary">Ver detalhes</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card shadow h-100">
+                        <img src="./images/kit2.png" class="card-img-top" alt="Kit ADA Beginner">
+                        <div class="card-body">
+                            <h5 class="card-title">Kit ADA Beginner</h5>
+                            <h6 class="card-subtitle mb-2 text-body-secondary">R$ 89,90</h6>
+                            <p class="card-text">O kit perfeito para quem está começando a jornada na programação.</p>
+                            <a href="#" class="btn btn-primary">Ver detalhes</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card shadow h-100">
+                        <img src="./images/javascript.png" class="card-img-top" alt="Curso de JavaScript">
+                        <div class="card-body">
+                            <h5 class="card-title">Curso de JavaScript</h5>
+                            <h6 class="card-subtitle mb-2 text-body-secondary">R$ 99,90</h6>
+                            <p class="card-text">Aprenda JavaScript moderno com projetos práticos e mentoria ao vivo.</p>
+                            <a href="./index.html#cursos-online" class="btn btn-primary">Ver detalhes</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== MODAL COMPRA CONFIRMADA ===== -->
+    <div class="modal fade" id="modalCompra" tabindex="-1" aria-labelledby="modalCompraLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="modalCompraLabel"><i class="fas fa-shopping-cart me-2"></i>Compra Confirmada!</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <i class="fas fa-check-circle fa-4x mb-3" style="color:#a855f7"></i>
+                    <p class="fs-5">Obrigado por escolher o <strong>Kit ADA Plus Kids</strong>!</p>
+                    <p class="text-muted">Em breve você receberá a confirmação do pedido no seu e-mail.</p>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <a href="./index.html" class="btn btn-primary">Continuar comprando</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="text-center bg-body-tertiary mt-5">
+        <div class="container pt-4">
+            <section class="mb-4">
+                <a class="btn btn-link btn-floating btn-lg text-body m-1" href="#!" aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a class="btn btn-link btn-floating btn-lg text-body m-1" href="#!" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a class="btn btn-link btn-floating btn-lg text-body m-1" href="#!" aria-label="Google">
+                    <i class="fab fa-google"></i>
+                </a>
+                <a class="btn btn-link btn-floating btn-lg text-body m-1" href="#!" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a class="btn btn-link btn-floating btn-lg text-body m-1" href="#!" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a class="btn btn-link btn-floating btn-lg text-body m-1" href="#!" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+            </section>
+        </div>
+        <div class="text-center p-3" style="background-color: rgba(114, 114, 114, 0.05);">
+            © 2025 Copyright
+            <a class="text-body" href="./index.html">ADA MarketPlace</a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script>
+        // Troca de imagem pelas miniaturas
+        function changeImage(thumb, src) {
+            document.getElementById('mainProductImg').src = src;
+            document.querySelectorAll('.product-thumb').forEach(t => t.classList.remove('active'));
+            thumb.classList.add('active');
+        }
+
+        // Submit do formulário abre modal de confirmação
+        document.getElementById('formCompra').addEventListener('submit', function (e) {
+            e.preventDefault();
+            if (this.checkValidity()) {
+                var modal = new bootstrap.Modal(document.getElementById('modalCompra'));
+                modal.show();
+            }
+            this.classList.add('was-validated');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="./home.css">
+    <title>Compras</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="./index.html">
+                <img src="./images/icone-de-panier-violet.png" alt="Bootstrap" width="30" height="24">
+            </a>
+            <a class="navbar-brand" href="#">ADA MarketPlace</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Produtos
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Cursos Online</a></li>
+                            <li><a class="dropdown-item" href="./Produto2.html">Ada Produtos kids</a></li>
+                            <li><a class="dropdown-item" href="./Produto1.html">Produtos Personalizados</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Suporte</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2 purple" type="search" placeholder="Pesquisar" aria-label="Search"/>
+                    <button class="btn btn-purple" type="submit">Pesquisar</button>
+                </form>
+
+                <button type="button" class="btn btn-primary ms-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Cadastre-se
+                </button>
+
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Cadastro</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Nome</label>
+                                <input type="" class="form-control" id="exampleInputNome" aria-describedby="emailHelp" placeholder="Digite seu Nome" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Sobrenome</label>
+                                <input type="" class="form-control" id="exampleInputSobrenome" aria-describedby="emailHelp" placeholder="Digite seu sobrenome" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputCPF">CPF</label>
+                                <input type="" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="000.000.000-00" required >
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Digite seu email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Senha</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Digite sua senha">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Confirmar Senha</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirme sua senha">
+                            </div>
+                            <div class="form-group form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Desejo receber promoções via e-mail</label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        <button type="button" class="btn btn-primary" type="submit">Salvar cadastro</button>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="cards.cursos.online container my-4">
+        <h2>Cursos online</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card shadow h-100">
+                    <img src="./images/java8.webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Java Beginner</h5>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">Price R$ 89,90</h6>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum quasi dolor natus nesciunt consequatur ducimus praesentium dolorum.</p>
+                        <a href="#" class="btn btn-primary">Buy</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card shadow h-100">
+                    <img src="./images/javascript.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">JavaScript Advanced</h5>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">Price R$ 99,90</h6>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus praesentium dolorum.</p>
+                        <a href="#" class="btn btn-primary">Buy</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card shadow h-100">
+                    <img src="./images/phyton.jpeg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Phyton</h5>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">Price R$ 89,90</h6>
+                        <p class="card-text">Lorem ipsum dolor sit amet, voluptatum quasi dolor natus nesciunt consequatur ducimus praesentium dolorum.</p>
+                        <a href="#" class="btn btn-primary">Buy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cards.cursos.presencial container my-4">
+        <h2>Cursos Presenciais</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card shadow h-100">
+                    <img src="./images/HTML.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">HTML & CSS</h5>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">Price R$ 199,90</h6>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum quasi dolor natus nesciunt consequatur ducimus praesentium dolorum.</p>
+                        <a href="#" class="btn btn-primary">Buy</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card shadow h-100">
+                    <img src="./images/api.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">API</h5>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">Price R$ 189,90</h6>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus praesentium dolorum.</p>
+                        <a href="#" class="btn btn-primary">Buy</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card shadow h-100">
+                    <img src="./images/java8.webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Java Advanced</h5>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">Price R$ 229,90</h6>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus praesentium dolorum.</p>
+                        <a href="#" class="btn btn-primary">Buy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cards.personalizados container my-4">
+        <h2>Produtos Personalizados</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card shadow h-100">
+                    <img src="./images/kit1.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Kit Ada Premium</h5>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">Price R$ 199,90</h6>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo explicabo architecto, corrupt nobis temporibus non neque maiores debitis tempora rem facilis, voluptatum quasi dolor natus nesciunt consequatur ducimus praesentium dolorum.</p>
+                        <a href="#" class="btn btn-primary">Buy</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card shadow h-100">
+                    <img src="./images/kit3.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Kit ADA Plus</h5>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">Price R$ 139,90</h6>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo explicabo architecto, corrupt nobis temporibus non neque maiores, voluptatum quasi dolor natus nesciunt consequatur ducimus praesentium dolorum.</p>
+                        <a href="#" class="btn btn-primary">Buy</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card shadow h-100">
+                    <img src="./images/kit2.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Kit ADA Begginer</h5>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">Price R$ 89,90</h6>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo explicabo architecto, corrupt nobis temporibus non neque maiores.</p>
+                        <a href="#" class="btn btn-primary">Buy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<footer class="text-center bg-body-tertiary">
+    <div class="container pt-4">
+        <section class="mb-4">
+        <a
+            data-mdb-ripple-init
+            class="btn btn-link btn-floating btn-lg text-body m-1"
+            href="#!"
+            role="button"
+            data-mdb-ripple-color="dark"
+            ><i class="fab fa-facebook-f"></i
+        ></a>
+
+        <a
+            data-mdb-ripple-init
+            class="btn btn-link btn-floating btn-lg text-body m-1"
+            href="#!"
+            role="button"
+            data-mdb-ripple-color="dark"
+            ><i class="fab fa-twitter"></i
+        ></a>
+
+        <a
+            data-mdb-ripple-init
+            class="btn btn-link btn-floating btn-lg text-body m-1"
+            href="#!"
+            role="button"
+            data-mdb-ripple-color="dark"
+            ><i class="fab fa-google"></i
+        ></a>
+
+        <a
+            data-mdb-ripple-init
+            class="btn btn-link btn-floating btn-lg text-body m-1"
+            href="#!"
+            role="button"
+            data-mdb-ripple-color="dark"
+            ><i class="fab fa-instagram"></i
+        ></a>
+
+        <a
+            data-mdb-ripple-init
+            class="btn btn-link btn-floating btn-lg text-body m-1"
+            href="#!"
+            role="button"
+            data-mdb-ripple-color="dark"
+            ><i class="fab fa-linkedin"></i
+        ></a>
+        <a
+            data-mdb-ripple-init
+            class="btn btn-link btn-floating btn-lg text-body m-1"
+            href="./github.jpg"
+            role="button"
+            data-mdb-ripple-color="dark"
+            ><i class="fab fa-github"></i
+        ></a>
+        </section>
+    </div>
+
+    <div class="text-center p-3" style="background-color: rgba(114, 114, 114, 0.05);">
+        © 2020 Copyright
+        <a class="text-body" href="https://mdbootstrap.com/">ADA MarketPlace</a>
+    </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+ 
+    <title>ADA MarketPlace - Kits Personalizados</title>
+ 
+    <style>
+        .card-img-top {
+            height: 260px;
+            object-fit: contain;
+            background-color: #f8f9fa;
+            padding: 10px;
+            transition: transform 0.3s ease;
+        }
+ 
+        .card-body {
+            display: flex;
+            flex-direction: column;
+        }
+ 
+        .buy-btn {
+            margin-top: auto;
+        }
+ 
+        .card {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            padding: 10px;
+        }
+ 
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+ 
+        .card:hover .card-img-top {
+            transform: scale(1.05);
+        }
+ 
+        .card-title {
+            font-size: 1.2rem;
+        }
+ 
+        .card-body ul {
+            font-size: 14px;
+        }
+    </style>
+ 
+</head>
+ 
+<body>
+ 
+<nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="./index.html">
+                <img src="./images/icone-de-panier-violet.png" alt="Bootstrap" width="30" height="24">
+            </a>
+            <a class="navbar-brand" href="#">ADA MarketPlace</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Produtos
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Cursos Online</a></li>
+                            <li><a class="dropdown-item" href="./Produto2.html">Ada Produtos kids</a></li>
+                            <li><a class="dropdown-item" href="./Produto1.html">Produtos Personalizados</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Suporte</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2 purple" type="search" placeholder="Pesquisar" aria-label="Search"/>
+                    <button class="btn btn-purple" type="submit">Pesquisar</button>
+                </form>
+
+                <button type="button" class="btn btn-primary ms-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Cadastre-se
+                </button>
+
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Cadastro</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Nome</label>
+                                <input type="" class="form-control" id="exampleInputNome" aria-describedby="emailHelp" placeholder="Digite seu Nome" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Sobrenome</label>
+                                <input type="" class="form-control" id="exampleInputSobrenome" aria-describedby="emailHelp" placeholder="Digite seu sobrenome" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputCPF">CPF</label>
+                                <input type="" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="000.000.000-00" required >
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Digite seu email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Senha</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Digite sua senha">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Confirmar Senha</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirme sua senha">
+                            </div>
+                            <div class="form-group form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Desejo receber promoções via e-mail</label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        <button type="button" class="btn btn-primary" type="submit">Salvar cadastro</button>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+ 
+<main class="container my-5">
+ 
+    <h2 class="text-center mb-4">Kits Personalizados</h2>
+ 
+    <div class="row g-4">
+ 
+        <div class="col-md-4">
+            <div class="card shadow-sm h-100">
+                <img src="images/kit1.png" class="card-img-top" alt="Kit 1">
+                <div class="card-body">
+                    <h5 class="card-title">Kit 1 - Premium Box</h5>
+                    <ul>
+                        <li>Fone de ouvido</li>
+                        <li>Copo personalizado</li>
+                        <li>Agenda exclusiva</li>
+                    </ul>
+                    <p class="fw-bold text-success">R$ 149,90</p>
+                    <button class="btn btn-success w-100 buy-btn">Comprar</button>
+                </div>
+            </div>
+        </div>
+ 
+        <div class="col-md-4">
+            <div class="card shadow-sm h-100">
+                <img src="images/kit2.png" class="card-img-top" alt="Kit 2">
+                <div class="card-body">
+                    <h5 class="card-title">Kit 2 - Eco Style</h5>
+                    <ul>
+                        <li>Eco bag sustentável</li>
+                        <li>Copo reutilizável</li>
+                        <li>Agendinha compacta</li>
+                    </ul>
+                    <p class="fw-bold text-primary">R$ 99,90</p>
+                    <button class="btn btn-primary w-100 buy-btn">Comprar</button>
+                </div>
+            </div>
+        </div>
+ 
+        <div class="col-md-4">
+            <div class="card shadow-sm h-100">
+                <img src="images/kit3.png" class="card-img-top" alt="Kit 3">
+                <div class="card-body">
+                    <h5 class="card-title">Kit 3 - Casual Pack</h5>
+                    <ul>
+                        <li>Camiseta personalizada</li>
+                        <li>Copo temático</li>
+                        <li>Buttons decorativos</li>
+                    </ul>
+                    <p class="fw-bold text-success">R$ 119,90</p>
+                    <button class="btn btn-success w-100 buy-btn">Comprar</button>
+                </div>
+            </div>
+        </div>
+ 
+    </div>
+ 
+    <div class="mt-5 p-4 bg-light rounded">
+        <h4>Faça seu pedido</h4>
+        <form>
+            <div class="mb-3">
+                <label class="form-label">Nome</label>
+                <input type="text" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Escolha o kit</label>
+                <select class="form-select">
+                    <option>Kit 1 - Premium Box</option>
+                    <option>Kit 2 - Eco Style</option>
+                    <option>Kit 3 - Casual Pack</option>
+                </select>
+            </div>
+            <button class="btn btn-dark w-100">Enviar pedido</button>
+        </form>
+    </div>
+ 
+</main>
+
+<footer class="text-center bg-body-tertiary">
+    <div class="container pt-4">
+        <section class="mb-4">
+        <a
+            data-mdb-ripple-init
+            class="btn btn-link btn-floating btn-lg text-body m-1"
+            href="#!"
+            role="button"
+            data-mdb-ripple-color="dark"
+            ><i class="fab fa-facebook-f"></i
+        ></a>
+
+        <a
+            data-mdb-ripple-init
+            class="btn btn-link btn-floating btn-lg text-body m-1"
+            href="#!"
+            role="button"
+            data-mdb-ripple-color="dark"
+            ><i class="fab fa-twitter"></i
+        ></a>
+
+        <a
+            data-mdb-ripple-init
+            class="btn btn-link btn-floating btn-lg text-body m-1"
+            href="#!"
+            role="button"
+            data-mdb-ripple-color="dark"
+            ><i class="fab fa-google"></i
+        ></a>
+
+        <a
+            data-mdb-ripple-init
+            class="btn btn-link btn-floating btn-lg text-body m-1"
+            href="#!"
+            role="button"
+            data-mdb-ripple-color="dark"
+            ><i class="fab fa-instagram"></i
+        ></a>
+
+        <a
+            data-mdb-ripple-init
+            class="btn btn-link btn-floating btn-lg text-body m-1"
+            href="#!"
+            role="button"
+            data-mdb-ripple-color="dark"
+            ><i class="fab fa-linkedin"></i
+        ></a>
+        <a
+            data-mdb-ripple-init
+            class="btn btn-link btn-floating btn-lg text-body m-1"
+            href="./github.jpg"
+            role="button"
+            data-mdb-ripple-color="dark"
+            ><i class="fab fa-github"></i
+        ></a>
+        </section>
+    </div>
+
+    <div class="text-center p-3" style="background-color: rgba(114, 114, 114, 0.05);">
+        © 2020 Copyright
+        <a class="text-body" href="https://mdbootstrap.com/">ADA MarketPlace</a>
+    </div>
+</footer>
+ 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+ 
+</body>
+</html>
