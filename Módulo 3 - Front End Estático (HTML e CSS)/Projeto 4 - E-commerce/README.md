@@ -1,4 +1,4 @@
-### Projeto 4 — Atividade Front-End Estático (em grupo)
+# Projeto 4 — Atividade Front-End Estático (em grupo)
 
 Desenvolvimento de uma página web utilizando **HTML & CSS** ou **Bootstrap 5**, aplicando estrutura semântica, responsividade e navegação entre páginas.
 
