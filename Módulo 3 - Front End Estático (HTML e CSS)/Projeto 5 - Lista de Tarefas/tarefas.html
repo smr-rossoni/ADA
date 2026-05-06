@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarefas - TaskMaster</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <i class="fas fa-tasks fa-2x me-2"></i>
+                <span class="fw-bold">TaskMaster</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><i class="fas fa-home me-1"></i>Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="usuarios.html"><i class="fas fa-users me-1"></i>Usuários</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="listas.html"><i class="fas fa-list me-1"></i>Listas</a>
+                    </li>
+                </ul>
+                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#createTaskModal">
+                    <i class="fas fa-plus me-1"></i>Nova Tarefa
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Modal para criar tarefa -->
+    <div class="modal fade" id="createTaskModal" tabindex="-1" aria-labelledby="createTaskModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title" id="createTaskModalLabel"><i class="fas fa-plus-circle me-2"></i>Adicionar Nova Tarefa</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="taskName" class="form-label">Nome da Tarefa</label>
+                            <input type="text" class="form-control" id="taskName" placeholder="Digite a tarefa" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="taskPriority" class="form-label">Prioridade</label>
+                            <select class="form-select" id="taskPriority">
+                                <option value="baixa">Baixa</option>
+                                <option value="media" selected>Média</option>
+                                <option value="alta">Alta</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="taskDescription" class="form-label">Descrição (opcional)</label>
+                            <textarea class="form-control" id="taskDescription" rows="3" placeholder="Detalhes da tarefa"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-success">Adicionar Tarefa</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="text-center mb-5">
+                    <h1 class="display-5 fw-bold text-primary"><i class="fas fa-clipboard-list me-3"></i>Tarefas da Lista</h1>
+                    <p class="lead text-muted">Lista: <strong>Trabalho</strong> • Usuário: <strong>João Silva</strong></p>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="card shadow-lg border-0 mb-4">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Progresso da Lista</h5>
+                        <div class="progress mb-3" style="height: 20px;">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">2 de 5 tarefas</div>
+                        </div>
+                        <p class="text-muted">40% concluído</p>
+                    </div>
+                </div>
+
+                <div class="card shadow-lg border-0">
+                    <div class="card-header bg-warning text-white">
+                        <h5 class="mb-0"><i class="fas fa-tasks me-2"></i>Tarefas</h5>
+                    </div>
+                    <div class="card-body p-4">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item d-flex justify-content-between align-items-center border-0 py-3">
+                                <div class="d-flex align-items-center">
+                                    <input class="form-check-input me-3" type="checkbox" id="tarefa1" checked>
+                                    <div>
+                                        <label class="form-check-label fw-bold" for="tarefa1">Reunião com equipe</label>
+                                        <br>
+                                        <small class="text-muted">Prioridade: Alta • Criada em 15/05/2024</small>
+                                    </div>
+                                </div>
+                                <button class="btn btn-outline-danger btn-sm">
+                                    <i class="fas fa-trash me-1"></i>Remover
+                                </button>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center border-0 py-3">
+                                <div class="d-flex align-items-center">
+                                    <input class="form-check-input me-3" type="checkbox" id="tarefa2" checked>
+                                    <div>
+                                        <label class="form-check-label fw-bold" for="tarefa2">Revisar relatório</label>
+                                        <br>
+                                        <small class="text-muted">Prioridade: Média • Criada em 14/05/2024</small>
+                                    </div>
+                                </div>
+                                <button class="btn btn-outline-danger btn-sm">
+                                    <i class="fas fa-trash me-1"></i>Remover
+                                </button>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center border-0 py-3">
+                                <div class="d-flex align-items-center">
+                                    <input class="form-check-input me-3" type="checkbox" id="tarefa3">
+                                    <div>
+                                        <label class="form-check-label fw-bold" for="tarefa3">Enviar e-mail para cliente</label>
+                                        <br>
+                                        <small class="text-muted">Prioridade: Alta • Criada em 16/05/2024</small>
+                                    </div>
+                                </div>
+                                <button class="btn btn-outline-danger btn-sm">
+                                    <i class="fas fa-trash me-1"></i>Remover
+                                </button>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center border-0 py-3">
+                                <div class="d-flex align-items-center">
+                                    <input class="form-check-input me-3" type="checkbox" id="tarefa4">
+                                    <div>
+                                        <label class="form-check-label fw-bold" for="tarefa4">Atualizar documentação</label>
+                                        <br>
+                                        <small class="text-muted">Prioridade: Baixa • Criada em 13/05/2024</small>
+                                    </div>
+                                </div>
+                                <button class="btn btn-outline-danger btn-sm">
+                                    <i class="fas fa-trash me-1"></i>Remover
+                                </button>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center border-0 py-3">
+                                <div class="d-flex align-items-center">
+                                    <input class="form-check-input me-3" type="checkbox" id="tarefa5">
+                                    <div>
+                                        <label class="form-check-label fw-bold" for="tarefa5">Preparar apresentação</label>
+                                        <br>
+                                        <small class="text-muted">Prioridade: Alta • Criada em 17/05/2024</small>
+                                    </div>
+                                </div>
+                                <button class="btn btn-outline-danger btn-sm">
+                                    <i class="fas fa-trash me-1"></i>Remover
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card shadow-lg border-0 mt-4">
+                    <div class="card-header bg-success text-white">
+                        <h5 class="mb-0"><i class="fas fa-plus-circle me-2"></i>Adicionar Nova Tarefa</h5>
+                    </div>
+                    <div class="card-body p-4">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-8 mb-3">
+                                    <label for="nome-tarefa" class="form-label fw-bold">Nome da Tarefa</label>
+                                    <input type="text" id="nome-tarefa" name="nome-tarefa" class="form-control" placeholder="Digite a nova tarefa" required>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="prioridade" class="form-label fw-bold">Prioridade</label>
+                                    <select class="form-select" id="prioridade">
+                                        <option value="baixa">Baixa</option>
+                                        <option value="media" selected>Média</option>
+                                        <option value="alta">Alta</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="detalhes" class="form-label fw-bold">Detalhes (opcional)</label>
+                                <textarea class="form-control" id="detalhes" rows="3" placeholder="Descreva os detalhes da tarefa"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-success btn-lg w-100">
+                                <i class="fas fa-save me-2"></i>Adicionar Tarefa
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="text-center mt-4">
+                    <a href="listas.html" class="btn btn-secondary btn-lg">
+                        <i class="fas fa-arrow-left me-2"></i>Voltar às Listas
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-2"><i class="fas fa-tasks me-2"></i><strong>TaskMaster</strong> - Sistema de Controle de Tarefas</p>
+            <p class="mb-0 text-muted">&copy; 2024 Todos os direitos reservados</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

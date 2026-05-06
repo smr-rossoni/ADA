@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Sistema de Controle de Tarefas</title>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <i class="fas fa-tasks fa-2x me-2"></i>
+                <span class="fw-bold">TaskMaster</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html"><i class="fas fa-home me-1"></i>Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="usuarios.html"><i class="fas fa-users me-1"></i>Usuários</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-list me-1"></i>Listas
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="listas.html?usuario=1">João Silva</a></li>
+                            <li><a class="dropdown-item" href="listas.html?usuario=2">Maria Oliveira</a></li>
+                            <li><a class="dropdown-item" href="listas.html?usuario=3">Carlos Santos</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex me-2">
+                    <input class="form-control me-2" type="search" placeholder="Buscar usuário..." aria-label="Search">
+                    <button class="btn btn-outline-light" type="submit"><i class="fas fa-search"></i></button>
+                </form>
+                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#createUserModal">
+                    <i class="fas fa-plus me-1"></i>Novo Usuário
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Modal para criar usuário -->
+    <div class="modal fade" id="createUserModal" tabindex="-1" aria-labelledby="createUserModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title" id="createUserModalLabel"><i class="fas fa-user-plus me-2"></i>Criar Novo Usuário</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="userName" class="form-label">Nome Completo</label>
+                            <input type="text" class="form-control" id="userName" placeholder="Digite o nome do usuário" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="userEmail" class="form-label">E-mail</label>
+                            <input type="email" class="form-control" id="userEmail" placeholder="usuario@email.com">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-success">Criar Usuário</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero bg-gradient-primary text-white py-5 position-relative overflow-hidden">
+        <div class="container position-relative">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-3">📋 Gerencie suas tarefas com eficiência</h1>
+                    <p class="lead mb-4">Organize suas listas de tarefas, acompanhe o progresso e aumente sua produtividade com o TaskMaster.</p>
+                    <a href="usuarios.html" class="btn btn-light btn-lg me-2 shadow">
+                        <i class="fas fa-users me-2"></i>Ver Usuários
+                    </a>
+                    <a href="#users" class="btn btn-outline-light btn-lg shadow">
+                        <i class="fas fa-arrow-down me-2"></i>Começar
+                    </a>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <div class="text-center">
+                        <i class="fas fa-tasks fa-10x text-white-50"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Usuários Section -->
+    <section id="users" class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="display-5 fw-bold text-primary">👥 Usuários Ativos</h2>
+                    <p class="lead text-muted">Selecione um usuário para gerenciar suas listas de tarefas</p>
+                </div>
+            </div>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <!-- Usuários mockados -->
+                <div class="col">
+                        <div class="card h-100 shadow-lg border-0 hover-card">
+                            <div class="card-body text-center p-4">
+                                <div class="avatar-circle bg-primary text-white mx-auto mb-3">
+                                    <i class="fas fa-user fa-2x"></i>
+                                </div>
+                                <h5 class="card-title fw-bold">João Silva</h5>
+                                <p class="text-muted mb-3">3 listas ativas</p>
+                                <a href="listas.html?usuario=1" class="btn btn-primary w-100">
+                                    <i class="fas fa-list me-2"></i>Ver Listas
+                                </a>
+                            </div>
+                        </div>
+                </div>
+                <div class="col">
+                        <div class="card h-100 shadow-lg border-0 hover-card">
+                            <div class="card-body text-center p-4">
+                                <div class="avatar-circle bg-success text-white mx-auto mb-3">
+                                    <i class="fas fa-user fa-2x"></i>
+                                </div>
+                                <h5 class="card-title fw-bold">Maria Oliveira</h5>
+                                <p class="text-muted mb-3">2 listas ativas</p>
+                                <a href="listas.html?usuario=2" class="btn btn-success w-100">
+                                    <i class="fas fa-list me-2"></i>Ver Listas
+                                </a>
+                            </div>
+                        </div>
+                </div>
+                <div class="col">
+                        <div class="card h-100 shadow-lg border-0 hover-card">
+                            <div class="card-body text-center p-4">
+                                <div class="avatar-circle bg-info text-white mx-auto mb-3">
+                                    <i class="fas fa-user fa-2x"></i>
+                                </div>
+                                <h5 class="card-title fw-bold">Carlos Santos</h5>
+                                <p class="text-muted mb-3">1 lista ativa</p>
+                                <a href="listas.html?usuario=3" class="btn btn-info w-100">
+                                    <i class="fas fa-list me-2"></i>Ver Listas
+                                </a>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="display-5 fw-bold">✨ Funcionalidades</h2>
+                </div>
+            </div>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col text-center">
+                    <div class="feature-icon bg-primary text-white mx-auto mb-3">
+                        <i class="fas fa-users fa-3x"></i>
+                    </div>
+                    <h4>Múltiplos Usuários</h4>
+                    <p class="text-muted">Gerencie tarefas para diferentes usuários separadamente</p>
+                </div>
+                <div class="col text-center">
+                    <div class="feature-icon bg-success text-white mx-auto mb-3">
+                        <i class="fas fa-list fa-3x"></i>
+                    </div>
+                    <h4>Listas Organizadas</h4>
+                    <p class="text-muted">Crie e organize suas tarefas em listas temáticas</p>
+                </div>
+                <div class="col text-center">
+                    <div class="feature-icon bg-info text-white mx-auto mb-3">
+                        <i class="fas fa-chart-line fa-3x"></i>
+                    </div>
+                    <h4>Acompanhamento</h4>
+                    <p class="text-muted">Marque tarefas como concluídas e acompanhe seu progresso</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p class="mb-2"><i class="fas fa-tasks me-2"></i><strong>TaskMaster</strong> - Sistema de Controle de Tarefas</p>
+            <p class="mb-0 text-muted">&copy; 2024 Todos os direitos reservados</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

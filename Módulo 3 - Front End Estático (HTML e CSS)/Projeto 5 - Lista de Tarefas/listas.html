@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listas de Tarefas - TaskMaster</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <i class="fas fa-tasks fa-2x me-2"></i>
+                <span class="fw-bold">TaskMaster</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><i class="fas fa-home me-1"></i>Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="usuarios.html"><i class="fas fa-users me-1"></i>Usuários</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#"><i class="fas fa-list me-1"></i>Listas</a>
+                    </li>
+                </ul>
+                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#createListModal">
+                    <i class="fas fa-plus me-1"></i>Nova Lista
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Modal para criar lista -->
+    <div class="modal fade" id="createListModal" tabindex="-1" aria-labelledby="createListModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title" id="createListModalLabel"><i class="fas fa-list-alt me-2"></i>Criar Nova Lista</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="listName" class="form-label">Nome da Lista</label>
+                            <input type="text" class="form-control" id="listName" placeholder="Digite o nome da lista" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="listDescription" class="form-label">Descrição (opcional)</label>
+                            <textarea class="form-control" id="listDescription" rows="3" placeholder="Descrição da lista"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-success">Criar Lista</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="text-center mb-5">
+                    <h1 class="display-5 fw-bold text-primary"><i class="fas fa-list me-3"></i>Listas de Tarefas</h1>
+                    <p class="lead text-muted">Gerencie suas listas de tarefas - Usuário: <strong>João Silva</strong></p>
+                </div>
+
+                <div class="card shadow-lg border-0 mb-4">
+                    <div class="card-header bg-info text-white">
+                        <h5 class="mb-0"><i class="fas fa-folder-open me-2"></i>Suas Listas</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <div class="card h-100 border-primary hover-card">
+                                    <div class="card-body text-center">
+                                        <div class="feature-icon bg-primary text-white rounded-circle mx-auto mb-3">
+                                            <i class="fas fa-briefcase fa-2x"></i>
+                                        </div>
+                                        <h5 class="card-title fw-bold">Trabalho</h5>
+                                        <p class="text-muted">5 tarefas • 2 concluídas</p>
+                                        <div class="d-flex justify-content-center gap-2">
+                                            <a href="tarefas.html?lista=1" class="btn btn-primary">
+                                                <i class="fas fa-eye me-1"></i>Ver Tarefas
+                                            </a>
+                                            <button class="btn btn-outline-danger btn-sm">
+                                                <i class="fas fa-trash me-1"></i>Remover
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="card h-100 border-success hover-card">
+                                    <div class="card-body text-center">
+                                        <div class="feature-icon bg-success text-white rounded-circle mx-auto mb-3">
+                                            <i class="fas fa-home fa-2x"></i>
+                                        </div>
+                                        <h5 class="card-title fw-bold">Pessoal</h5>
+                                        <p class="text-muted">3 tarefas • 1 concluída</p>
+                                        <div class="d-flex justify-content-center gap-2">
+                                            <a href="tarefas.html?lista=2" class="btn btn-success">
+                                                <i class="fas fa-eye me-1"></i>Ver Tarefas
+                                            </a>
+                                            <button class="btn btn-outline-danger btn-sm">
+                                                <i class="fas fa-trash me-1"></i>Remover
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card shadow-lg border-0">
+                    <div class="card-header bg-success text-white">
+                        <h5 class="mb-0"><i class="fas fa-plus-circle me-2"></i>Criar Nova Lista</h5>
+                    </div>
+                    <div class="card-body p-4">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-8 mb-3">
+                                    <label for="nome-lista" class="form-label fw-bold">Nome da Lista</label>
+                                    <input type="text" id="nome-lista" name="nome-lista" class="form-control" placeholder="Digite o nome da nova lista" required>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="categoria" class="form-label fw-bold">Categoria</label>
+                                    <select class="form-select" id="categoria">
+                                        <option value="trabalho">Trabalho</option>
+                                        <option value="pessoal">Pessoal</option>
+                                        <option value="estudos">Estudos</option>
+                                        <option value="outros">Outros</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="descricao" class="form-label fw-bold">Descrição (opcional)</label>
+                                <textarea class="form-control" id="descricao" rows="3" placeholder="Descreva o propósito desta lista"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-success btn-lg w-100">
+                                <i class="fas fa-save me-2"></i>Criar Lista
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="text-center mt-4">
+                    <a href="index.html" class="btn btn-secondary btn-lg">
+                        <i class="fas fa-arrow-left me-2"></i>Voltar ao Início
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-2"><i class="fas fa-tasks me-2"></i><strong>TaskMaster</strong> - Sistema de Controle de Tarefas</p>
+            <p class="mb-0 text-muted">&copy; 2024 Todos os direitos reservados</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
