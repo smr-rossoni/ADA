@@ -1,0 +1,159 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: white;
+}
+
+/* CONTAINER CENTRAL (ESSENCIAL) */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* HEADER */
+header {
+    background-color: #e10600;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+section {
+    border-bottom: 1px solid #333;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+}
+
+/* INTRO */
+.intro {
+    text-align: center;
+    padding: 20px;
+}
+
+/* TÍTULO DA SEÇÃO */
+.titulo-secao {
+    margin: 20px 0;
+    font-size: 28px;
+}
+
+/* GRID PRODUTOS */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+/* CARD */
+.card {
+    background-color: #1c1c1c;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* IMAGEM PADRONIZADA */
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+/* TEXTO */
+.card h3 {
+    margin-top: 10px;
+}
+
+.card p {
+    font-size: 14px;
+    color: #ccc;
+}
+
+/* TABELA */
+table {
+    width: 100%;
+    margin: 30px 0;
+    border-collapse: collapse;
+    background-color: #1c1c1c;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th {
+    background-color: #e10600;
+    color: white;
+    padding: 12px;
+    text-align: center;
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid #333;
+    text-align: center;
+}
+
+/* ZEBRA */
+tr:nth-child(even) {
+    background-color: #2a2a2a;
+}
+
+/* HOVER */
+tr:hover {
+    background-color: #333;
+}
+
+/* FORM */
+#cadastro form {
+    display: flex;
+    flex-direction: column;
+    max-width: 350px;
+    margin: 30px auto;
+    background-color: #1c1c1c;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+input, select, button {
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+/* FOOTER */
+footer {
+    background-color: black;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
