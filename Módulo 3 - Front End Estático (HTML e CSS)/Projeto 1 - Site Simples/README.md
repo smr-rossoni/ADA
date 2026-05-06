@@ -1,4 +1,4 @@
-# 🌐 Site Simples — HTML & CSS
+# 🌐 Projeto 1 - Site Simples
 
 ## 🎯 Objetivo
 

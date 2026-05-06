@@ -1,4 +1,4 @@
-# 📘 Projeto 2 — Catálogo Digital Responsivo
+# 📘 Projeto 3 — Catálogo Digital Responsivo
 
 ## 🎯 Objetivo
 
